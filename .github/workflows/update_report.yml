@@ -24,12 +24,12 @@ jobs:
           
       - name: Render Rmarkdown files
         run: |
-          Rscript -e 'rmarkdown::render("report.Rmd", output_format = "all")' 
+          Rscript -e 'rmarkdown::render("report.Rmd", output_file = "index.html", output_format = "html")' 
 
       - name: Commit results
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          git add report.*
+          git add index.html
           git commit -m 'Re-build Rmarkdown files' || echo "No changes to commit"
           git push origin || echo "No changes to commit"
