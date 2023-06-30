@@ -24,7 +24,7 @@ jobs:
           
       - name: Render Rmarkdown files
         run: |
-          Rscript -e 'rmarkdown::render("report.Rmd", output_file = "index.html", output_format = "html")' 
+          Rscript -e 'rmarkdown::render("report.Rmd", output_file = "index.html", output_format = "html_document")' 
 
       - name: Commit results
         run: |
