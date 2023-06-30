@@ -29,10 +29,10 @@ jobs:
           
       - name: Render Rmarkdown files
         run: |
-          Rscript -e 'for (f in commandArgs(TRUE)) if (file.exists(f)) rmarkdown::render(f, output_format = "all")' 
+          Rscript -e 'rmarkdown::render("report.Rmd", output_format = "all")' 
 
       - name: Commit results
         run: |
-          git add *
+          git add report*
           git commit -m 'Re-build Rmarkdown files' || echo "No changes to commit"
           git push origin || echo "No changes to commit"
