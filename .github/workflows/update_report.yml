@@ -14,8 +14,8 @@ jobs:
       - name: Render document
         uses: lc5415/rmarkdown-action@v1
         with:
-          input_file: report.Rmd
-	        output_format: pdf_document
+          input_file: news_sentiment_analysis/report.Rmd
+	  output_format: html_document
       - name: Commit files
         run: |
           git config --local core.autocrlf false
