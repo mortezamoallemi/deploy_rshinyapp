@@ -11,11 +11,20 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v2
-      - name: Render document
-        uses: lc5415/rmarkdown-action@v1
+      - name: Set up R ${{ matrix.r-version }}
+        uses: r-lib/actions/setup-R@v1
         with:
-          input_file: report.rmd
-	  output_format: html_document
+          r-version: ${{ matrix.r-version }}
+      - name: Setting up pandoc for Rmd docs
+        uses: r-lib/actions/setup-pandoc@v1
+      - name: Install dependencies
+        run: |
+          Rscript -e 'install.packages(c("dplyr", "rmarkdown"))'
+	  Rscript -e 'rmarkdown::render("report.Rmd", "html_document")'
+      # - name: Updating data and cleaning 
+      #  run: |
+      #    source('scripts/datacleaning.R')
+      #  shell: Rscript {0}
       - name: Commit files
         run: |
           git config --local core.autocrlf false
