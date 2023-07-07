@@ -1,7 +1,7 @@
 FROM rocker/shiny:4.2.1
 RUN install2.r rsconnect shinydashboard  shinycssloaders
 RUN install2.r plotly
-RUN install2.r wordcloud RColorBrewer
+RUN install2.r wordcloud RColorBrewer SnowballC
 # Name or path of the app on shinyapp.io should be entered after "/home/"
 WORKDIR /home/news_sentiment_analysis
 COPY ui.R ui.R 
