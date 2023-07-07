@@ -1,6 +1,12 @@
 library(shiny)
 library(shinydashboard)
 library(shinycssloaders)
+library("tm")
+library("wordcloud")
+library("RColorBrewer")
+library("ggplot2")
+library("stringr")
+library(plotly)
 
 
 dashboardPage(
