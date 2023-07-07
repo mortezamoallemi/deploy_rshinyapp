@@ -1,7 +1,6 @@
 library(shiny)
 library(shinydashboard)
 library(shinycssloaders)
-library("tm")
 library("wordcloud")
 library("RColorBrewer")
 library("ggplot2")
