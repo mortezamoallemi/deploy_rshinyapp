@@ -7,13 +7,15 @@ library("stringr")
 library(plotly)
 library(shiny)
 
+  data <- readRDS("data.RDS")
+
 # Define server logic required to draw a histogram
 function(input, output, session) {
 
   #######################################################################3
   ######## generate word cloud ##############################################
   #######################################################################3
-  data <- readRDS("data.RDS")
+
   
   #######################################################################3
   ######## Plot the most frequent words ##############################################
