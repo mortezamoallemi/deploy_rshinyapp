@@ -6,6 +6,6 @@ RUN install2.r tm wordcloud RColorBrewer
 WORKDIR /home/news_sentiment_analysis
 COPY ui.R ui.R 
 COPY server.R server.R 
-COPY data.rds data.rds
+COPY data.RDS data.RDS
 COPY deploy.R deploy.R
 CMD Rscript deploy.R
