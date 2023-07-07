@@ -1,10 +1,7 @@
 # rm(list = ls())
 # Load
-library("tm")
-library("SnowballC")
 library("wordcloud")
 library("RColorBrewer")
-library("syuzhet")
 library("ggplot2")
 library("stringr")
 library(plotly)
